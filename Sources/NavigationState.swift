@@ -6,21 +6,11 @@ struct NavigationState: Equatable {
 
 // MARK: - Actions
 enum NavigationAction: Action {
-    case replace(screen: Screen, animated: Bool)
-    case push(screen: Screen, animated: Bool)
+    case replace(screen: Screen, animated: Bool = false)
+    case push(screen: Screen, animated: Bool = true)
 
     case didNavigate
     case didPop(screen: Screen)
-}
-
-extension NavigationAction {
-    static func replace(with screen: Screen, animated: Bool = false) -> NavigationAction {
-        return .replace(screen: screen, animated: animated)
-    }
-
-    static func push(_ screen: Screen, animated: Bool = true) -> NavigationAction {
-        return .push(screen: screen, animated: animated)
-    }
 }
 
 // MARK: - Reducer

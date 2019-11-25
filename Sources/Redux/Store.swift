@@ -23,7 +23,7 @@ final class Store<State>: StoreType {
     }
 
     var state: State {
-        return relay.value
+        relay.value
     }
 
     private func _defaultDispatch(_ action: Action) {
@@ -44,7 +44,7 @@ final class Store<State>: StoreType {
 
     /// Subscribes to changes to the state.
     func observe<T: Equatable>(_ keyPath: KeyPath<State, T>) -> Observable<T> {
-        return relay
+        relay
             .map { $0[keyPath: keyPath] }
             .distinctUntilChanged()
     }

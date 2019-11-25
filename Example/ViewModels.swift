@@ -9,7 +9,7 @@ final class OnboardingViewModel {
 
     func didComplete() {
         // ...
-        dispatch(NavigationAction.push(.auth))
+        dispatch(NavigationAction.push(screen: .auth))
     }
 }
 
@@ -18,7 +18,7 @@ final class AuthViewModel {
 
     func didComplete() {
         // ...
-        dispatch(NavigationAction.replace(.transactionList))
+        dispatch(NavigationAction.replace(screen: .transactionList))
     }
 }
 
@@ -27,6 +27,6 @@ final class TransactionsViewModel {
 
     func didPressTransaction(_ transaction: Transaction) {
         // ...
-        dispatch(NavigationAction.push(.transactionDetail(transaction)))
+        dispatch(NavigationAction.push(screen: .transactionDetail(transaction)))
     }
 }

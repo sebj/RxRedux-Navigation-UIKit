@@ -1,10 +1,10 @@
 # 🔄 🗺
 
-This is a basic Redux-like implementation in Swift using RxSwift, allowing the current app navigation state to be accurately represented within the central `Store`.
+This is a basic Redux-like implementation in Swift using RxSwift, allowing the current app navigation state to be  represented within a central `Store`.
 
-See [ReSwift's documentation](https://github.com/ReSwift/ReSwift/blob/master/README.md) for a better explanation of some of the common principles.
+See [ReSwift's documentation](https://github.com/ReSwift/ReSwift/blob/master/README.md) for a better explanation of some of the common principles. [Majid Jabrayilov](https://swiftwithmajid.com/2019/09/18/redux-like-state-container-in-swiftui/) also has a similar SwiftUI/Combine Store implementation.
 
-*Developed to target Swift 5.*
+*Developed to target Swift 5.1.*
 
 ## Usage
 

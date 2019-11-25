@@ -24,8 +24,8 @@ final class Router {
         viewControllerFactory: @escaping ViewControllerFactory,
         dispatch: @escaping DispatchFunction,
         navigationState: Observable<NavigationState>,
-        presenter: ViewControllerPresenter
-    ) {
+        presenter: ViewControllerPresenter)
+    {
         self.viewControllerFactory = viewControllerFactory
         self.dispatch = dispatch
         self.presenter = presenter
@@ -38,14 +38,18 @@ final class Router {
     }
 
     private func route(to screenHierarchy: [Screen], animated: Bool) {
-        guard screenHierarchy != lastScreenHierarchy else { return }
+        guard screenHierarchy != lastScreenHierarchy else {
+            return
+        }
 
         guard screenHierarchy != lastScreenHierarchy.dropLast() else {
             lastScreenHierarchy = lastScreenHierarchy.dropLast()
             return
         }
 
-        guard let presenter = presenter else { return }
+        guard let presenter = presenter else {
+            return
+        }
 
         guard !screenHierarchy.isEmpty else {
             return presenter.setViewControllers([], animated: animated)

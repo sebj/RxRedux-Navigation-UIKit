@@ -9,7 +9,9 @@ public struct Thunk<State>: Action {
 }
 
 public func createThunksMiddleware<State>() -> Middleware<State> {
-    return { dispatch, getState in { next in { action in
+    { dispatch, getState in
+        { next in 
+            { action in
                 switch action {
                 case let thunk as Thunk<State>:
                     thunk.body(getState, dispatch)

@@ -1,4 +1,6 @@
-let loggingMiddleware: Middleware<AppState> = { dispatch, getState in { next in { action in
+let loggingMiddleware: Middleware<AppState> = { dispatch, getState in
+    { next in 
+        { action in
             print("> Action: \(String(describing: action))")
             return next(action)
         }
